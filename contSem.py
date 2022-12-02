@@ -36,10 +36,10 @@ class ContSem():
             if i.estado != 0 and self.cambio != 2:
                 self.nada = 1
             """
-            if i.tiempoRestante > -2 and self.cambio == 1:
+            if i.tiempoRestante > -3 and self.cambio == 1:
                 self.cambio = 0
 
-        tiempo = -26
+        tiempo = -28
         for i in self.semaforos:
 
             if i.tiempoRestante < tiempo and self.cambio == 1:
@@ -48,7 +48,7 @@ class ContSem():
                 self.turno = 2
                 self.semid = i.id - self.id * 10
 
-            if i.tiempoRestante < -12 and safe == 0 and self.cambio == 1:
+            if i.tiempoRestante < -13 and safe == 0 and self.cambio == 1:
                 safe = 1
                 if self.turno == 0:
                     self.turno = 1

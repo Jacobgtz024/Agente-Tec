@@ -173,8 +173,8 @@ class Carro():
                 #print("Si se lo que ago")
         if ddd != 9999 and ddd !=  -9999:
             if self.v != 0:
-                ddd = ddd - ddd % self.v
-            ddd = ddd - self.v/1 *self.direccionM - 5*self.direccionM
+                ddd = ddd - (ddd % self.v)*self.direccionM
+            ddd = ddd - 5*self.direccionM
             
         if(self.ddd_pas == 9999 or self.ddd_pas == -9999):
             self.ddd_pas = ddd
@@ -202,8 +202,6 @@ class Carro():
             self.direccionS = 3
         elif self.angulo == 360:
             self.direccionS = 0
-        else:
-            self.direccionS = 4
             
     def Carro_corre(self):
         #if self.vueltaa == 2:
