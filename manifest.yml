@@ -1,0 +1,4 @@
+---
+applications:
+  - name: servidor-multiagentes-equipo2
+    random-route: true
