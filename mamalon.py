@@ -210,7 +210,7 @@ class table():
                                     car.angulo)) * 9999 * powery
                                 distancia = 9999
 
-            if math.sqrt((dis - usa)**2) > 40:
+            if math.sqrt((dis - usa)**2) > 100:
                 if math.sqrt((dis - usa)**2) > v*6:
                     xx = math.cos(math.radians(car.angulo)) * 9999
                     yy = math.sin(math.radians(car.angulo)) * 9999
@@ -250,7 +250,7 @@ class table():
 
             carNuevo = Carro.Carro(cosas[select][0], cosas[select][1], cosas[select]
                                    [2], cosas[select][3], cosas[select][4], cosas[select][5])
-            posicionN = [[9999, 9999, 0, 9999, 0, 0]] * self.count
+            posicionN = [[9999, 9999, 0, 9999, 0, 0]] * (self.count + 2)
             carNuevo.posiciones = posicionN
             self.numeroCarros = self.numeroCarros + 1
             self.Carros.append(carNuevo)

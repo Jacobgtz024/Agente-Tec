@@ -13,7 +13,7 @@ class Carro():
         self.vls = vl
         self.x = x
         self.y = y
-        self.ta = 3
+        self.ta = 5
         self.ax = 0
         self.v2 = 0
         self.start_lag = 0 
@@ -121,7 +121,7 @@ class Carro():
         ta = self.ta
         if self.evitar == 999 or self.distancia < (self.ddd - self.trabajo - self.aver*self.direccionM)*self.direccionM and self.evitar == 0 and self.ddd * self.direccionM - self.trabajo * self.direccionM > 0:
             if self.start_lag < 7:
-                ta = self.ta + 14 - 2*self.start_lag
+                #ta = self.ta + 14 - 2*self.start_lag
                 self.start_lag += 1
             self.aceleracion(self.vl, ta)
             vl = self.vl
@@ -173,8 +173,8 @@ class Carro():
                 #print("Si se lo que ago")
         if ddd != 9999 and ddd !=  -9999:
             if self.v != 0:
-                ddd = ddd - (ddd % self.v)*self.direccionM
-            ddd = ddd - 5 * self.direccionM
+                ddd = ddd - (ddd % self.v)/5*self.direccionM
+            ddd = ddd - 5 * self.direccionM 
             
         if(self.ddd_pas == 9999 or self.ddd_pas == -9999):
             self.ddd_pas = ddd
