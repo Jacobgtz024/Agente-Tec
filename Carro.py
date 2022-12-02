@@ -174,7 +174,7 @@ class Carro():
         if ddd != 9999 and ddd !=  -9999:
             if self.v != 0:
                 ddd = ddd - ddd % self.v
-            ddd = ddd - 5*self.direccionM
+            ddd = ddd - self.v/1 *self.direccionM - 5*self.direccionM
             
         if(self.ddd_pas == 9999 or self.ddd_pas == -9999):
             self.ddd_pas = ddd

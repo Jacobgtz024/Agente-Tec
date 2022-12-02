@@ -150,7 +150,7 @@ class ContSem():
             j += 1
 
     def run(self, carriles):
-        if self.count % (1/0.05) == 0:
+        if self.count % (30) == 0:
             self.carriles = carriles
             self.prenderSemaforo()
             j = 0
