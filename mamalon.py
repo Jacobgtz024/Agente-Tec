@@ -234,7 +234,7 @@ class table():
 
         self.count = self.count + 1
 
-        if self.count % 100 == 0 and self.count != 0:
+        if self.count % 80 == 0 and self.count != 0:
 
             vl = 8.5 + random.randint(0, 15)*0.1
             vueltaa = random.randint(0, 2)
