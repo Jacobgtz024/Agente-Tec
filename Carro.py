@@ -5,7 +5,7 @@ class Carro():
         self.id = id
         self.step = 0
         self.safeToTurn = 1
-        self.v = 0
+        self.v = 0.1
         self.vt = 0
         self.vx = 0
         self.vy = 0
@@ -101,13 +101,13 @@ class Carro():
         
  
     def decide(self):
-        if  1 <= self.vuelta < self.pasosG and self.vueltaa == 1 or (self.vueltaa == 1 and self.v < 0.01 and self.pointing == 2) and self.ddd == 9999 or self.ddd == -9999 and (self.vueltaa == 1 and self.v < 0.01 and self.pointing == 2):
+        if  1 <= self.vuelta < self.pasosG and self.vueltaa == 1 or (self.vueltaa == 1 and self.v < 0.05 and self.pointing == 2) and self.ddd == 9999 or self.ddd == -9999 and (self.vueltaa == 1 and self.v < 0.05 and self.pointing == 2):
             if self.vuelta%2 == 0:
                 self.vl = 6
                 self.turnleft()
             self.vuelta = self.vuelta-1
             #print(self.x, self.y, self.vuelta, self.v, self.ddd, self.pointing)
-        elif 1 <= self.vuelta < self.pasosG and self.vueltaa == 2 or (self.vueltaa == 2 and self.v < 0.01 and self.pointing != 0) and self.ddd == 9999 or self.ddd == -9999 and (self.vueltaa == 2 and self.v < 0.01 and self.pointing != 0):
+        elif 1 <= self.vuelta < self.pasosG and self.vueltaa == 2 or (self.vueltaa == 2 and self.v < 0.05 and self.pointing != 0) and self.ddd == 9999 or self.ddd == -9999 and (self.vueltaa == 2 and self.v < 0.05 and self.pointing != 0):
             if self.vuelta%2 == 0:
                 self.vl = 10
                 self.turnright()
@@ -174,7 +174,7 @@ class Carro():
         if ddd != 9999 and ddd !=  -9999:
             if self.v != 0:
                 ddd = ddd - (ddd % self.v)*self.direccionM
-            ddd = ddd - 5*self.direccionM
+            ddd = ddd - 5 * self.direccionM
             
         if(self.ddd_pas == 9999 or self.ddd_pas == -9999):
             self.ddd_pas = ddd
