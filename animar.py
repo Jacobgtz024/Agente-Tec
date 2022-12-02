@@ -16,24 +16,24 @@ def animar():
     car3 = Carro.Carro(12, 0, 0, 110, 0, 2)
     sem = semaforo.Sem(80, 40, 0, 2)
     sem2 = semaforo.Sem(75, 35, 1, 0)
-    sem3 = semaforo.Sem(75, 40, 2, 1)
-    sem4 = semaforo.Sem(80, 35, 3, 3)
+    sem3 = semaforo.Sem(75, 40, 2, 3)
+    sem4 = semaforo.Sem(80, 35, 3, 1)
 
     semaforos = [sem, sem2, sem3, sem4]
     sema0 = contSem.ContSem(0, "que te", semaforos)
 
     sem = semaforo.Sem(80, 115, 10, 2)
     sem2 = semaforo.Sem(75, 110, 11, 0)
-    sem3 = semaforo.Sem(75, 115, 12, 1)
-    sem4 = semaforo.Sem(80, 110, 13, 3)
+    sem3 = semaforo.Sem(75, 115, 12, 3)
+    sem4 = semaforo.Sem(80, 110, 13, 1)
 
     semaforos = [sem, sem2, sem3, sem4]
     sema1 = contSem.ContSem(1, "que te", semaforos)
 
     sem = semaforo.Sem(175, 115, 20, 2)
     sem2 = semaforo.Sem(170, 110, 21, 0)
-    sem3 = semaforo.Sem(170, 115, 22, 1)
-    sem4 = semaforo.Sem(175, 110, 23, 3)
+    sem3 = semaforo.Sem(170, 115, 22, 3)
+    sem4 = semaforo.Sem(175, 110, 23, 1)
 
     semaforos = [sem, sem2, sem3, sem4]
     sema2 = contSem.ContSem(2, "que te", semaforos)

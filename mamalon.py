@@ -73,8 +73,8 @@ class table():
 
             for car2 in self.Carros:
 
-                x2 = car2.x * powerx
-                y2 = car2.y * powery
+                x2 = car2.x * powerx - 3 * powerx
+                y2 = car2.y * powery - 3 * powery
                 dis = math.sqrt((x2*x2)+(y2*y2))
                 if usa >= 0:
                     limi = dis
@@ -91,22 +91,22 @@ class table():
                 # and car2.x-car.x <= v*15:
                 if usa < dis and dis <= distancia and car != car2 and -1 < limi - limite < 1 and car.direccionS == car2.direccionS:
                     pointing = 0
-                    xx = x2*powerx - 3 * powerx
-                    yy = y2*powery - 3 * powery
+                    xx = x2*powerx
+                    yy = y2*powery
                     if car.v == 0:
                         distancia = dis
                     elif car.vy == 0:
-                        distancia = car2.x - 3 * powerx
+                        distancia = car2.x
                     elif car.vx == 0:
-                        distancia = car2.y - 3 * powery
+                        distancia = car2.y
                     elif car.angulo == 0 or car.angulo == 180:
-                        distancia = car2.x - 3 * powerx
+                        distancia = car2.x
                     elif car.angulo == 90 or car.angulo == 270:
-                        distancia = car2.y - 3 * powery
+                        distancia = car2.y
                     elif xx-x > yy-y:
-                        distancia = car2.y - 3 * powery
+                        distancia = car2.y
                     else:
-                        distancia = car2.x - 3 * powerx
+                        distancia = car2.x
 
             for sin in self.sema:
                 for sem in sin.semaforos:
@@ -116,8 +116,8 @@ class table():
                     if car.angulo == 90 and -2 < sem.x-car.x < 2 or car.angulo == 270 and -2 < sem.x-car.x < 2:
                         car.x = sem.x
 
-                    x2 = sem.x * powerx
-                    y2 = sem.y * powery
+                    x2 = sem.x * powerx - 3 * powerx
+                    y2 = sem.y * powery - 3 * powerx
                     dis = math.sqrt((x2*x2)+(y2*y2))
                     if usa >= 0:
                         limi = dis
@@ -210,7 +210,7 @@ class table():
                                     car.angulo)) * 9999 * powery
                                 distancia = 9999
 
-            if math.sqrt((dis - usa)**2) > 100:
+            if math.sqrt((dis - usa)**2) > 60:
                 if math.sqrt((dis - usa)**2) > v*6:
                     xx = math.cos(math.radians(car.angulo)) * 9999
                     yy = math.sin(math.radians(car.angulo)) * 9999
