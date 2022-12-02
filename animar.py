@@ -43,7 +43,7 @@ def animar():
     car = [car1, car2, car3]
     tabla = mamalon.table(car, semM)
 
-    for i in range(1, 3000):
+    for i in range(1, 4500):
         tabla.regreso()
 
     points = tabla.imprime()

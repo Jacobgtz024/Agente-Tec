@@ -14,14 +14,14 @@ class Sem():
             if self.estado == 1:
                 self.estado = 2
         elif self.fl == 1:
-            if self.estado == 1 and self.tiempoRestante > 5:
+            if self.estado == 1 and self.tiempoRestante > 7:
                 self.estado = 2
-            elif self.estado == 2 and self.tiempoRestante <= 5:
+            elif self.estado == 2 and self.tiempoRestante <= 7:
                 self.estado = 1
         elif self.fl == 2:
-            if self.estado == 2 and self.tiempoRestante >= 5:
+            if self.estado == 2 and self.tiempoRestante >= 3:
                 self.estado = 1
-            elif self.estado == 1 and self.tiempoRestante < 5:
+            elif self.estado == 1 and self.tiempoRestante < 3:
                 self.estado = 2
 
         self.estados[1].append(self.estado)

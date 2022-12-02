@@ -22,7 +22,7 @@ class table():
             if -5 > car.x or -5 > car.y or 290 < car.x or 200 < car.y:
                 posicionesguardadas = self.posiciones[car.id]
 
-                restantess = (2400-self.count)
+                restantess = (4500-self.count)
                 restantess = restantess - restantess % 1
                 restantes = [9999, 9999, 0, 0, 0, 0]
 
@@ -234,9 +234,9 @@ class table():
 
         self.count = self.count + 1
 
-        if self.count % 100 == 0 and self.count != 0:
+        if self.count % 150 == 0 and self.count != 0:
 
-            vl = 8.5 + random.randint(0, 15)*0.1
+            vl = 10
             vueltaa = random.randint(0, 2)
 
             cosas = [[vl, 80, vueltaa, 0, 90, self.numeroCarros],

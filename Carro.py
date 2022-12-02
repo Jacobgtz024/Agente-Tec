@@ -92,6 +92,7 @@ class Carro():
             self.distancia = (self.vt * self.ta) - (self.v2*self.ta)
             self.aver = (self.vt + ((self.vl - self.vt)/self.ta*self.tiempo_control))*self.tiempo_control
             
+            
             if(self.vueltaa == 33):
                 print("AAAAA", self.x)
                 print(self.distancia * self.direccionM)
@@ -118,7 +119,7 @@ class Carro():
         self.decide()
         self.check_distance()
         ta = self.ta
-        if self.evitar == 999 or self.distancia < (self.ddd - self.trabajo - self.aver)*self.direccionM and self.evitar == 0 and self.ddd * self.direccionM - self.trabajo * self.direccionM > 0:
+        if self.evitar == 999 or self.distancia < (self.ddd - self.trabajo - self.aver*self.direccionM)*self.direccionM and self.evitar == 0 and self.ddd * self.direccionM - self.trabajo * self.direccionM > 0:
             if self.start_lag < 7:
                 ta = self.ta + 14 - 2*self.start_lag
                 self.start_lag += 1
@@ -173,7 +174,7 @@ class Carro():
         if ddd != 9999 and ddd !=  -9999:
             if self.v != 0:
                 ddd = ddd - ddd % self.v
-            ddd = ddd - self.v/1 - 5*self.direccionM
+            ddd = ddd - 5*self.direccionM
             
         if(self.ddd_pas == 9999 or self.ddd_pas == -9999):
             self.ddd_pas = ddd
@@ -201,6 +202,8 @@ class Carro():
             self.direccionS = 3
         elif self.angulo == 360:
             self.direccionS = 0
+        else:
+            self.direccionS = 4
             
     def Carro_corre(self):
         #if self.vueltaa == 2:
