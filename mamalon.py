@@ -91,22 +91,22 @@ class table():
                 # and car2.x-car.x <= v*15:
                 if usa < dis and dis <= distancia and car != car2 and -1 < limi - limite < 1 and car.direccionS == car2.direccionS:
                     pointing = 0
-                    xx = x2*powerx - 3
-                    yy = y2*powery - 3
+                    xx = x2*powerx - 3 * powerx
+                    yy = y2*powery - 3 * powery
                     if car.v == 0:
                         distancia = dis
                     elif car.vy == 0:
-                        distancia = car2.x - 3
+                        distancia = car2.x - 3 * powerx
                     elif car.vx == 0:
-                        distancia = car2.y - 3
+                        distancia = car2.y - 3 * powery
                     elif car.angulo == 0 or car.angulo == 180:
-                        distancia = car2.x - 3
+                        distancia = car2.x - 3 * powerx
                     elif car.angulo == 90 or car.angulo == 270:
-                        distancia = car2.y - 3
+                        distancia = car2.y - 3 * powery
                     elif xx-x > yy-y:
-                        distancia = car2.y - 3
+                        distancia = car2.y - 3 * powery
                     else:
-                        distancia = car2.x - 3
+                        distancia = car2.x - 3 * powerx
 
             for sin in self.sema:
                 for sem in sin.semaforos:
@@ -132,7 +132,7 @@ class table():
                         dis = y2
                         #print(car.trabajo, car.distancia, car.v2, car.direccionM, car.y, car.ddd)
 
-                    if usa < dis and dis <= distancia and limi == limite and car.direccionS == sem.direccionS and not (dis-usa < 15 and car.v > 6):
+                    if usa < dis and dis <= distancia and limi == limite and car.direccionS == sem.direccionS and not (dis-usa < 15 and car.v > 7):
                         if(sem.estado == 0):
                             pointing = 0
                             xx = x2*powerx
@@ -171,7 +171,7 @@ class table():
                                 else:
                                     distancia = sem.x
 
-                                if car.v < 0.01:
+                                if car.v < 0.05:
                                     car.safeToTurn = 0
                             else:
                                 pointing = 1
@@ -200,7 +200,7 @@ class table():
                                 else:
                                     distancia = sem.x
 
-                                if car.v < 0.01:
+                                if car.v < 0.05:
                                     car.safeToTurn = 0
                             else:
                                 pointing = 2
@@ -210,7 +210,7 @@ class table():
                                     car.angulo)) * 9999 * powery
                                 distancia = 9999
 
-            if math.sqrt((dis - usa)**2) > 25:
+            if math.sqrt((dis - usa)**2) > 40:
                 if math.sqrt((dis - usa)**2) > v*6:
                     xx = math.cos(math.radians(car.angulo)) * 9999
                     yy = math.sin(math.radians(car.angulo)) * 9999
