@@ -91,22 +91,22 @@ class table():
                 # and car2.x-car.x <= v*15:
                 if usa < dis and dis <= distancia and car != car2 and -1 < limi - limite < 1 and car.direccionS == car2.direccionS:
                     pointing = 0
-                    xx = x2
-                    yy = y2
+                    xx = x2*powerx
+                    yy = y2*powery
                     if car.v == 0:
                         distancia = dis
                     elif car.vy == 0:
-                        distancia = car2.x - 2 * powerx
+                        distancia = car2.x
                     elif car.vx == 0:
-                        distancia = car2.y - 2 * powery
+                        distancia = car2.y
                     elif car.angulo == 0 or car.angulo == 180:
-                        distancia = car2.x - 2 * powerx
+                        distancia = car2.x
                     elif car.angulo == 90 or car.angulo == 270:
-                        distancia = car2.y - 2 * powery
+                        distancia = car2.y
                     elif xx-x > yy-y:
-                        distancia = car2.y - 2 * powery
+                        distancia = car2.y
                     else:
-                        distancia = car2.x - 2 * powerx
+                        distancia = car2.x
 
             for sin in self.sema:
                 for sem in sin.semaforos:
@@ -116,8 +116,8 @@ class table():
                     if car.angulo == 90 and -2 < sem.x-car.x < 2 or car.angulo == 270 and -2 < sem.x-car.x < 2:
                         car.x = sem.x
 
-                    x2 = sem.x * powerx
-                    y2 = sem.y * powery
+                    x2 = sem.x * powerx - 3 * powerx
+                    y2 = sem.y * powery - 3 * powerx
                     dis = math.sqrt((x2*x2)+(y2*y2))
                     if usa >= 0:
                         limi = dis
@@ -140,17 +140,17 @@ class table():
                             if car.v == 0:
                                 distancia = dis
                             elif car.vy == 0:
-                                distancia = sem.x - 2 * powerx
+                                distancia = sem.x
                             elif car.vx == 0:
-                                distancia = sem.y - 2 * powery
+                                distancia = sem.y
                             elif car.angulo == 0 or car.angulo == 180:
-                                distancia = sem.x - 2 * powerx
+                                distancia = sem.x
                             elif car.angulo == 90 or car.angulo == 270:
-                                distancia = sem.y - 2 * powery
+                                distancia = sem.y
                             elif xx-x > yy-y:
-                                distancia = sem.y - 2 * powery
+                                distancia = sem.y
                             else:
-                                distancia = sem.x - 2 * powerx
+                                distancia = sem.x
                         elif sem.estado == 1:
                             if car.vueltaa == 1 and car.safeToTurn == 1 or car.vueltaa == 2 and car.safeToTurn == 1:
                                 pointing = 0
@@ -159,17 +159,17 @@ class table():
                                 if car.v == 0:
                                     distancia = dis
                                 elif car.vy == 0:
-                                    distancia = sem.x - 2 * powerx
+                                    distancia = sem.x
                                 elif car.vx == 0:
-                                    distancia = sem.y - 2 * powery
+                                    distancia = sem.y
                                 elif car.angulo == 0 or car.angulo == 180:
-                                    distancia = sem.x - 2 * powerx
+                                    distancia = sem.x
                                 elif car.angulo == 90 or car.angulo == 270:
-                                    distancia = sem.y - 2 * powery
+                                    distancia = sem.y
                                 elif xx-x > yy-y:
-                                    distancia = sem.y - 2 * powery
+                                    distancia = sem.y
                                 else:
-                                    distancia = sem.x - 2 * powerx
+                                    distancia = sem.x
 
                                 if car.v < 0.05:
                                     car.safeToTurn = 0
@@ -188,17 +188,17 @@ class table():
                                 if car.v == 0:
                                     distancia = dis
                                 elif car.vy == 0:
-                                    distancia = sem.x - 2 * powerx
+                                    distancia = sem.x
                                 elif car.vx == 0:
-                                    distancia = sem.y - 2 * powery
+                                    distancia = sem.y
                                 elif car.angulo == 0 or car.angulo == 180:
-                                    distancia = sem.x - 2 * powerx
+                                    distancia = sem.x
                                 elif car.angulo == 90 or car.angulo == 270:
-                                    distancia = sem.y - 2 * powery
+                                    distancia = sem.y
                                 elif xx-x > yy-y:
-                                    distancia = sem.y - 2 * powery
+                                    distancia = sem.y
                                 else:
-                                    distancia = sem.x - 2 * powerx
+                                    distancia = sem.x
 
                                 if car.v < 0.05:
                                     car.safeToTurn = 0
