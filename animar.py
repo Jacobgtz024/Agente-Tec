@@ -157,3 +157,4 @@ def animar():
     }
 
     jsonStr = json.dumps(x)
+    return jsonStr
