@@ -24,7 +24,7 @@ class table():
 
                 restantess = (2400-self.count)
                 restantess = restantess - restantess % 1
-                restantes = [0, 9999, 0, 9999, 0, 0]
+                restantes = [9999, 9999, 0, 0, 0, 0]
 
                 for j in range(0, int(restantess)):
                     posicionesguardadas.append(restantes)
@@ -234,7 +234,7 @@ class table():
 
         self.count = self.count + 1
 
-        if self.count % 80 == 0 and self.count != 0:
+        if self.count % 100 == 0 and self.count != 0:
 
             vl = 8.5 + random.randint(0, 15)*0.1
             vueltaa = random.randint(0, 2)
@@ -250,7 +250,7 @@ class table():
 
             carNuevo = Carro.Carro(cosas[select][0], cosas[select][1], cosas[select]
                                    [2], cosas[select][3], cosas[select][4], cosas[select][5])
-            posicionN = [[0, 9999, 0, 9999, 0, 0]] * self.count
+            posicionN = [[9999, 9999, 0, 9999, 0, 0]] * self.count
             carNuevo.posiciones = posicionN
             self.numeroCarros = self.numeroCarros + 1
             self.Carros.append(carNuevo)

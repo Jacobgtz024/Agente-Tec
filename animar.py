@@ -11,9 +11,9 @@ import json
 def animar():
     # vl, ddd, x, vueltaa, y, angulo)
 
-    car1 = Carro.Carro(100, 80, 0, 0, 90, 0)
-    car2 = Carro.Carro(100, 75, 0, 170, 270, 1)
-    car3 = Carro.Carro(100, 0, 0, 110, 0, 2)
+    car1 = Carro.Carro(12, 80, 0, 0, 90, 0)
+    car2 = Carro.Carro(12, 75, 0, 170, 270, 1)
+    car3 = Carro.Carro(12, 0, 0, 110, 0, 2)
     sem = semaforo.Sem(80, 40, 0, 2)
     sem2 = semaforo.Sem(75, 35, 1, 0)
     sem3 = semaforo.Sem(75, 40, 2, 1)
@@ -43,7 +43,7 @@ def animar():
     car = [car1, car2, car3]
     tabla = mamalon.table(car, semM)
 
-    for i in range(1, 2400):
+    for i in range(1, 3000):
         tabla.regreso()
 
     points = tabla.imprime()
